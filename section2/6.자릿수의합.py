@@ -3,6 +3,43 @@ sys.stdin=open('input.txt', 'rt')
 n=int(input())
 digits=list(map(int, input().split()))
 
+
+print(n)
+print(digits)
+
+def digit_sum(x):
+    sum=0
+    while x>0:
+        sum+=x%10
+        x=x//10
+    return sum
+    
+max_val=0
+res=0
+for i in digits:
+    sum=digit_sum(i)
+    if max_val<sum:
+        max_val=sum
+        res=i
+
+print(i)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"""
+### 정답 코드
 # print(n)
 print(digits)
 
@@ -29,3 +66,4 @@ for i in digits:
         max_val=sum
         res=i
 print(i)
+"""
