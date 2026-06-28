@@ -1,16 +1,44 @@
 import sys
 sys.stdin=open('input.txt', 'rt')
 
-arr=list(range(1, 21))
-
-
+arr=[i for i in range(1, 21)]
 
 for _ in range(10):
-    [a,b]=map(int, input().split())
-    print(a,b)
-    for i in range((b-a+1)//2):
-        arr[a-1+i],arr[b-1-i]=arr[b-1-i],arr[a-1+i]
+  s, e=map(int, input().split())
+  for i in range((e-s+1)//2):
+    arr[s-1+i], arr[e-1-i]=arr[e-1-i], arr[s-1+i]
+
 print(arr)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# arr=list(range(1, 21))
+
+
+
+# for _ in range(10):
+#     [a,b]=map(int, input().split())
+#     print(a,b)
+#     for i in range((b-a+1)//2):
+#         arr[a-1+i],arr[b-1-i]=arr[b-1-i],arr[a-1+i]
+# print(arr)
 
 
 
