@@ -3,8 +3,50 @@ sys.stdin=open('input.txt', 'rt')
 
 arr=[list(map(int, input().split())) for _ in range(7)]
 
-cnt=0
 print(arr)
+cnt=0
+for i in range(7):
+  for j in range(3):
+    
+    tmp1=arr[i][j:j+5]
+    if tmp1==tmp1[::-1]:
+      cnt+=1
+
+    col_tmp=[arr[k][i] for k in range(j, j+5)]  
+    if col_tmp==col_tmp[::-1]:
+      cnt+=1
+
+print(cnt)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# arr=[list(map(int, input().split())) for _ in range(7)]
+
+# cnt=0
+# print(arr)
 
 # for i in range(3):
 #     for j in range(7):
@@ -12,16 +54,16 @@ print(arr)
 #         if tmp1==tmp1[::-1]:
 #             cnt+=1
         
-for i in range(7):
-    for j in range(3):
-        tmp=arr[i][j:j+5]
-        if tmp==tmp[::-1]:
-            cnt+=1
+# for i in range(7):
+#     for j in range(3):
+#         tmp=arr[i][j:j+5]
+#         if tmp==tmp[::-1]:
+#             cnt+=1
         
-        col_tmp=[arr[k][i] for k in range(j, j+5)]
-        if col_tmp==col_tmp[::-1]:
-            cnt+=1
-print(cnt)
+#         col_tmp=[arr[k][i] for k in range(j, j+5)]
+#         if col_tmp==col_tmp[::-1]:
+#             cnt+=1
+# print(cnt)
         
             
 
