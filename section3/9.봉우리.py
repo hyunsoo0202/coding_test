@@ -2,24 +2,66 @@ import sys
 sys.stdin=open('input.txt', 'rt')
 
 n=int(input())
-arr=[list(map(int, input().split())) for i in range(n)]
-direct=[[-1,0],[1,0],[0,-1],[0,1]]
+arr=[list(map(int, input().split())) for _ in range(n)]
 cnt=0
+dArr=[[-1,0],[1,0],[0,-1],[0,1]]
+
 for i in range(n):
-    for j in range(n):
+  for j in range(n):
+    for d in dArr:
+      x=i+d[0]
+      y=j+d[1]
 
-        for [dx, dy] in direct:
-            x=i+dx  
-            y=j+dy
-
-            if x<0 or x>n-1 or y<0 or y>n-1:
-                continue
-            if arr[i][j]<arr[x][y]:
-                break
-        else:
-            cnt+=1
-
+      if x>=0 and x<n and y>=0 and y<n:
+        if arr[x][y]>arr[i][j]:
+          break
+    else:
+      cnt+=1  
 print(cnt)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# n=int(input())
+# arr=[list(map(int, input().split())) for i in range(n)]
+# direct=[[-1,0],[1,0],[0,-1],[0,1]]
+# cnt=0
+# for i in range(n):
+#     for j in range(n):
+
+#         for [dx, dy] in direct:
+#             x=i+dx  
+#             y=j+dy
+
+#             if x<0 or x>n-1 or y<0 or y>n-1:
+#                 continue
+#             if arr[i][j]<arr[x][y]:
+#                 break
+#         else:
+#             cnt+=1
+
+# print(cnt)
 
 # for [dx,dy] in direct:
 #     print(dx, dy)
