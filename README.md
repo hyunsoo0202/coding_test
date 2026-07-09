@@ -13,6 +13,7 @@ section3
 section4
 
 - 2,3,4,6,9,10
+- 2,3,4
 
 section5
 
@@ -20,4 +21,4 @@ section5
 
 section6
 
-- 3,4
+- 3,4,5
