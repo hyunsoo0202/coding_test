@@ -3,24 +3,71 @@ sys.stdin=open('input.txt', 'rt')
 
 c,n=map(int, input().split())
 arr=[int(input()) for _ in range(n)]
-total=sum(arr)
-result=-2147000000
 
-def dfs(L, sub_total, tsum):
-  global result
-  if sub_total+(total-tsum)<result:
+
+
+def dfs(L, sum, tsum):
+  global large
+  if sum+(total-tsum)<large:
     return
-  if sub_total>c:
+  if sum>c:
     return
   if L==n:
-    if sub_total>result:
-      result=sub_total
+    if large<sum:
+      large=sum
   else:
-    dfs(L+1, sub_total+arr[L], tsum+arr[L])
-    dfs(L+1, sub_total, tsum+arr[L])
+    dfs(L+1, sum+arr[L], tsum+arr[L])
+    dfs(L+1, sum, tsum+arr[L])
 
-dfs(0,0,0)
-print(result)
+if __name__=='__main__':
+  total=sum(arr)
+  large=0
+  dfs(0, 0, 0)
+  print(large)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# c,n=map(int, input().split())
+# arr=[int(input()) for _ in range(n)]
+# total=sum(arr)
+# result=-2147000000
+
+# def dfs(L, sub_total, tsum):
+#   global result
+#   if sub_total+(total-tsum)<result:
+#     return
+#   if sub_total>c:
+#     return
+#   if L==n:
+#     if sub_total>result:
+#       result=sub_total
+#   else:
+#     dfs(L+1, sub_total+arr[L], tsum+arr[L])
+#     dfs(L+1, sub_total, tsum+arr[L])
+
+# dfs(0,0,0)
+# print(result)
 
 
 
